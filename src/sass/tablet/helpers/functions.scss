@@ -1,0 +1,92 @@
+@keyframes menuBlink {
+  0%{
+    color: #414141;
+    opacity: 1;
+  }
+  50%{
+    color:#b1d7e0;
+    opacity: 0.6;
+  }
+  100%{
+    color:#33c2e4;
+    opacity: 1;
+  }
+}
+@keyframes menuBlinkUp {
+  0%{
+    color:#33c2e4;
+    opacity: 1;
+
+  }
+  50%{
+    color:#b1d7e0;
+    opacity: 0.6;
+  }
+  100%{
+    color: #414141;
+    opacity: 1;
+  }
+}
+//////////////////////////////////////////////////////////
+@keyframes contactsButtonBlink {
+  0%{
+    color: #33c1e3;
+    opacity: 1;
+  }
+  50%{
+
+    opacity: 0.6;
+  }
+  100%{
+    color: #e85f61;
+    opacity: 1;
+  }
+}
+
+@keyframes contactsButtonBlinkUp {
+  0%{
+
+    color: #e85f61;
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    color: #33c1e3;
+    opacity: 1;
+  }
+}
+
+////////////////////////////////////////////////////
+
+@keyframes resumeButtonBlink {
+  0%{
+    color: $color5-red;
+    border: 2px solid $color5-red;
+  }
+  50%{
+    color:#b1d7e0;
+    opacity: 0.6;
+  }
+  100%{
+    color: #fff;
+    background-color: #e85f61;
+    border: 2px solid #e85f61;
+  }
+}
+@keyframes resumeButtonBlinkUp {
+  0%{
+    color: #fff;
+    background-color: #e85f61;
+    border: 2px solid #e85f61;
+  }
+  50%{
+    color:#b1d7e0;
+    opacity: 0.6;
+  }
+  100%{
+    color: $color5-red;
+    border: 2px solid $color5-red;
+  }
+}

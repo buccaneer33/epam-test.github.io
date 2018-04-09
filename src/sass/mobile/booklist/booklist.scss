@@ -1,0 +1,162 @@
+.header{
+  //flex-basis: 600px;
+  //height: 600px;
+  width: 100%;
+  //max-width: 1920px;
+  //min-width: 1280px;
+  background-color: #dcc;
+  background: url(../img/1st-screen-1920x1080-dark.jpg) no-repeat;
+  background-size: 165%;
+  background-position: left 49% top -1%;
+  padding: 0 0 126px 0;
+
+  &--flexbox{
+    @include flexbox(flex,column,center,flex-start,nowrap);
+
+  }
+
+  &__menu{
+    width: 100%;
+    //position: fixed;
+    top: 0;
+    z-index: 100;
+
+    &--scroll{
+      width: 100%;
+      position: fixed;
+      top: -142px;
+      z-index: 100;
+
+    }
+  }
+  &__contacts{
+    //  @include flexbox(flex,row,stretch,space-evenly,nowrap);
+      background-color: #333333;
+      font-size: 12px;
+      font-weight: 300;
+      height: 50px;
+      width: 100%;
+
+      &--item{
+        display: block;
+        color: #fff;
+        letter-spacing: 0.5px;
+        //border: 1px solid #fff;
+        position: relative;
+        padding: 10px 35px 10px 45px;
+        transition: $animation-time;
+
+        &:hover{
+        transition: $animation-time;
+        color: #008e70;
+        }
+
+      }
+      &--phones{
+        //position: relative;
+        color: inherit;
+        text-decoration: none;
+
+        &::before{
+          position: absolute;
+          content: url(../img/svg/phone.svg);
+          top: 8px;
+          left: 12px;
+
+        }
+      }
+      &--callback{
+        //position: relative;
+        color: inherit;
+        text-decoration: none;
+
+        &::before{
+          position: absolute;
+          content: url(../img/svg/callback.svg);
+          top: 8px;
+          left: 12px;
+
+      }
+    }
+      &--address{
+        //position: relative;
+        color: inherit;
+        text-decoration: none;
+
+        &::before{
+          position: absolute;
+          content: url(../img/svg/location.svg);
+          top: 8px;
+          left: 12px;
+      }
+    }
+      &--recc-btn{
+        position: relative;
+        cursor: pointer;
+        width: 231px;
+        height: 100%;
+        background-color: #4caf50;
+        align-self: flex-end;
+        transition: $animation-time;
+        overflow: hidden;
+
+        @include flexbox(flex,row,center,center,nowrap);
+
+
+      }
+      &--recc-a{
+        position: absolute;
+        color: #fff;
+        text-decoration: none;
+        top: 33%;
+        transition: $animation-time;
+
+        &::before{
+          position: absolute;
+          content: url(../img/svg/appointment-register.svg);
+          top: -2px;
+          left: -27px;
+
+      }
+    }
+
+    &--recc-active{
+      position: absolute;
+      color: #fff;
+      text-decoration: none;
+      top: -105%;
+      transition: $animation-time;
+
+      &::before{
+        position: absolute;
+        content: url(../img/svg/appointment-register-active.svg);
+        top: -2px;
+        left: -27px;
+
+    }
+  }
+
+
+  }
+
+  &__wrapper{
+    //border: 1px solid #fff;
+    @include flexbox(flex,row,center,space-between,nowrap);
+    width: 1056px;
+    height: 50px;
+    margin: 0 auto;
+  }
+
+}
+.header__contacts--recc-btn:hover{
+  transition: $animation-time;
+  background-color: #8cc63f;
+}
+.header__contacts--recc-btn:hover .header__contacts--recc-a{
+    top: 105%;
+    transition: $animation-time;
+}
+.header__contacts--recc-btn:hover .header__contacts--recc-active{
+    top: 33%;
+    transition: $animation-time;
+}

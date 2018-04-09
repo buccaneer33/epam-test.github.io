@@ -1,0 +1,30 @@
+.body{
+  background-color: #ffffff;
+  background-image: url(/img/biblioteka.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1147px;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  min-height: 300px;
+
+  font-family: 'PT_Sans-Web-Regular',  sans-serif;
+
+
+      &--flexbox{
+          @include flexbox(flex,column,center,center,nowrap);
+          }
+}
+.wrapper{
+  width:60%;
+  min-width: 600px;
+  height: 60%;
+  min-height: 400px;
+  background-color: #ddd;
+  @include flexbox(flex,row,center,center,nowrap);
+}

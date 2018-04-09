@@ -1,0 +1,24 @@
+.body{
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1147px;
+  //height: 100vh;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+  min-height: 300px;
+
+  font-family: 'PT_Sans-Web-Regular',  sans-serif;
+
+
+      &--flexbox{
+          @include flexbox(flex,column,stretch,flex-start,nowrap);
+          }
+}
+.wrapper{
+  width:100%;
+  margin: 0 auto;
+  background-color: #f00;
+
+}
