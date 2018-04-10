@@ -6,6 +6,7 @@
     font-size: 19px;
     background-color: #ccc;
     padding: 11px 52px;
+    cursor: pointer;
   }
   &--edit-book{
     width: 130px;
@@ -16,15 +17,21 @@
     padding: 5px 10px;
     margin: 5px;
     border: 1px solid #bbb;
+    cursor: pointer;
   }
   &--del-book{
-    width: 130px;
-    height: 30px;
-    color: #bbb;
-    font-size: 15px;
-    background-color: #fff;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid #bbb;
+      @extend .button--edit-book;
   }
+  &--save{
+    @extend .button--edit-book;
+    background-color: #bbb;
+    color: #eee;
+  }
+  &--close{
+    @extend .button--edit-book;
+    background-color: #eee;
+    border: 1px solid #eee;
+
+  }
+
 }

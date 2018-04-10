@@ -18,7 +18,7 @@
 
 
       &--flexbox{
-          @include flexbox(flex,row,center,center,nowrap);
+          @include flexbox(flex,column,center,center,nowrap);
           }
 }
 .wrapper{
@@ -27,5 +27,11 @@
   height: 40%;
   margin: 0 auto;
   background-color: #eee;
-  @include flexbox(flex,row,flex-start,center,nowrap);
+  @include flexbox(flex,column,center,center,nowrap);
+}
+.visible--anable{
+  display: inherit;
+}
+.visible--disable{
+  display: none;
 }

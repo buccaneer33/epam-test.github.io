@@ -14,21 +14,21 @@
   <section class="wrapper">
     <article class="booklist">
       <h1 class="booklist__title">Книжная полка</h1>
-      <button class="booklist__button button--add-book">Добавить книгу</button>
+      <button id="button__adding-form--open1" class="booklist__button button--add-book">Добавить книгу</button>
       <table class="booklist__table" border="0" cellspacing="0">
         <tr class="booklist__item">
           <td class="booklist__item--photo">
             <img src="img/book1.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
-            <div class="booklist__item--description-block">
-              <h6>
+            <div class="book__description">
+              <h6 class="book__description-name">
                 Javascript и Jquery
               </h6>
-              <span>
+              <span class="book__description-autor">
                 Дэвид Сойер Макфалланд
               </span>
-              <span>
+              <span class="book__description-year">
                 2016 г.
               </span>
             </div>
@@ -45,14 +45,14 @@
             <img src="img/book2.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
-            <div class="booklist__item--description-block">
-          <h6>
+          <div class="book__description">
+          <h6 class="book__description-name">
             Изучаем программирование на Javascript
           </h6>
-          <span>
+          <span class="book__description-autor">
             Эрик Фримэн, Элизабет Робсон
           </span>
-          <span>
+          <span class="book__description-year">
             2017 г.
           </span>
         </div>
@@ -69,14 +69,14 @@
             <img src="img/book3.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
-            <div class="booklist__item--description-block">
-          <h6>
+          <div class="book__description">
+          <h6 class="book__description-name">
             Секреты Javascript ниндзя
           </h6>
-          <span>
+          <span class="book__description-autor">
             Джон Резиг, Беэр Бибо
           </span>
-          <span>
+          <span class="book__description-year">
             2017 г.
           </span>
         </div>
@@ -93,14 +93,14 @@
             <img src="img/book4.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
-            <div class="booklist__item--description-block">
-          <h6>
+          <div class="book__description">
+          <h6 class="book__description-name">
             ES6 и не только
           </h6>
-          <span>
+          <span class="book__description-autor">
             Кайл Симпсон
           </span>
-          <span>
+          <span class="book__description-year">
             2017 г.
           </span>
         </div>
@@ -116,8 +116,38 @@
       </table>
 
     </article>
-  </section>
+    <article class="add-book visible--disable">
+        <h2 class="add-book__title">Книжная полка</h2>
+        <button id="button__adding-form--open2" class="add-book__button button--add-book">Добавить книгу</button>
+          <div class="add-book__form-block">
+            <form name="add-book__form" class="add-book__form">
+              <p>
+                <label class="add-book__label">Наименование</label><br>
+                <input type="text" class="add-book__input" name="add-book__desc">
+            </p>
+            <p>
+              <label class="add-book__label">Автор</label><br>
+              <input type="text" class="add-book__input" name="add-book__autor">
+            </p>
+            <p>
+              <label class="add-book__label">Год выпуска</label><br>
+              <input type="text"  size="5" class="add-book__year" name="add-book__year">
+            </p>
+            <p>
+              <label class="add-book__label">Изображение</label><br>
+              <input type="text" class="add-book__input" name="add-book__img">
+            </p>
+            <p>
+              <input class="add-book__button button--save" type="button" name="add-book--save-form" value="Сохранить"/>
+              <input class="add-book__button button--close" type="button" name="add-book--close-form" value="Отменить"/>
+            </p>
+          </div>
 
+
+
+    </article>
+  </section>
+<div class="add-book--background visible--disable"></div>
 
 
 
