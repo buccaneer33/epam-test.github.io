@@ -1,3 +1,45 @@
 .booklist{
-  
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 85px;
+  background-color: #eee;
+  text-align: left;
+  font-size: 43px;
+
+  &__title{
+    margin: 0 auto 24px;
+  }
+  &__button{
+
+  }
+  &__table{
+    background-color: #fff;
+    width: 100%;
+    margin-top: 20px;
+  }
+  &__item{
+    height: 100px;
+    &--photo{
+      width: 10%;
+      border: 1px solid #eee;
+      padding: 15px 30px;
+    }
+    &--description{
+      width: 70%;
+      border: 1px solid #eee;
+
+      &-block{
+        @include flexbox(flex,column,center,center,nowrap);
+      }
+    }
+    &--button-block{
+      width: 20%;
+      border: 1px solid #eee;
+
+    }
+    &--buttons{
+      @include flexbox(flex,column,center,center,nowrap);
+    }
+  }
 }

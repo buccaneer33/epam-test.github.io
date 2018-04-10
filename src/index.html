@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Список книг</title>
+<title>Книжная полка</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link href="fonts/fonts.css" rel="stylesheet" type="text/css">
@@ -13,8 +13,105 @@
 <body class="body body--flexbox">
   <section class="wrapper">
     <article class="booklist">
-      <h1 class="booklist__title">Список книг</h1>
-      <tabl class="booklist__table">
+      <h1 class="booklist__title">Книжная полка</h1>
+      <button class="booklist__button button--add-book">Добавить книгу</button>
+      <table class="booklist__table" border="0" cellspacing="0">
+        <tr class="booklist__item">
+          <td class="booklist__item--photo">
+            <img src="img/book1.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+          </td>
+          <td class="booklist__item--description">
+            <div class="booklist__item--description-block">
+              <h6>
+                Javascript и Jquery
+              </h6>
+              <span>
+                Дэвид Сойер Макфалланд
+              </span>
+              <span>
+                2016 г.
+              </span>
+            </div>
+          </td>
+          <td class="booklist__item--button-block">
+            <div class="booklist__item--buttons">
+              <button class="booklist__button button--edit-book">Редактировать</button>
+              <button class="booklist__button button--del-book">Удалить</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="booklist__item">
+          <td class="booklist__item--photo">
+            <img src="img/book2.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+          </td>
+          <td class="booklist__item--description">
+            <div class="booklist__item--description-block">
+          <h6>
+            Изучаем программирование на Javascript
+          </h6>
+          <span>
+            Эрик Фримэн, Элизабет Робсон
+          </span>
+          <span>
+            2017 г.
+          </span>
+        </div>
+          </td>
+          <td class="booklist__item--button-block">
+            <div class="booklist__item--buttons">
+              <button class="booklist__button button--edit-book">Редактировать</button>
+              <button class="booklist__button button--del-book">Удалить</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="booklist__item">
+          <td class="booklist__item--photo">
+            <img src="img/book3.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+          </td>
+          <td class="booklist__item--description">
+            <div class="booklist__item--description-block">
+          <h6>
+            Секреты Javascript ниндзя
+          </h6>
+          <span>
+            Джон Резиг, Беэр Бибо
+          </span>
+          <span>
+            2017 г.
+          </span>
+        </div>
+          </td>
+          <td class="booklist__item--button-block">
+            <div class="booklist__item--buttons">
+              <button class="booklist__button button--edit-book">Редактировать</button>
+              <button class="booklist__button button--del-book">Удалить</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="booklist__item">
+          <td class="booklist__item--photo">
+            <img src="img/book4.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+          </td>
+          <td class="booklist__item--description">
+            <div class="booklist__item--description-block">
+          <h6>
+            ES6 и не только
+          </h6>
+          <span>
+            Кайл Симпсон
+          </span>
+          <span>
+            2017 г.
+          </span>
+        </div>
+          </td>
+          <td class="booklist__item--button-block">
+            <div class="booklist__item--buttons">
+              <button class="booklist__button button--edit-book">Редактировать</button>
+              <button class="booklist__button button--del-book">Удалить</button>
+            </div>
+          </td>
+        </tr>
 
       </table>
 

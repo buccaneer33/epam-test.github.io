@@ -8,23 +8,24 @@
   width: 100%;
   max-width: 1920px;
   min-width: 1147px;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   overflow: auto;
-  min-height: 300px;
-
+  //min-height: 300px;
   font-family: 'PT_Sans-Web-Regular',  sans-serif;
 
 
+
+
       &--flexbox{
-          @include flexbox(flex,column,center,center,nowrap);
+          @include flexbox(flex,row,center,center,nowrap);
           }
 }
 .wrapper{
-  width:60%;
-  min-width: 600px;
-  height: 60%;
-  min-height: 400px;
-  background-color: #ddd;
-  @include flexbox(flex,row,center,center,nowrap);
+  max-width: 990px;
+  width: 70%;
+  height: 40%;
+  margin: 0 auto;
+  background-color: #eee;
+  @include flexbox(flex,row,flex-start,center,nowrap);
 }

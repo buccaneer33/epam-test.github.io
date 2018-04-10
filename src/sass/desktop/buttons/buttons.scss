@@ -1,0 +1,30 @@
+.button{
+
+
+  &--add-book{
+    color: #fff;
+    font-size: 19px;
+    background-color: #ccc;
+    padding: 11px 52px;
+  }
+  &--edit-book{
+    width: 130px;
+    height: 30px;
+    color: #bbb;
+    font-size: 15px;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #bbb;
+  }
+  &--del-book{
+    width: 130px;
+    height: 30px;
+    color: #bbb;
+    font-size: 15px;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #bbb;
+  }
+}
