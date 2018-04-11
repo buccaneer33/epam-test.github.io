@@ -82,10 +82,22 @@
     margin: 10px 0;
     width: 80%;
     height: 20px;
+
+    &--year{
+      width: 10%;
+    }
   }
-  &__year{
-    @extend .add-book__input;
-    width: 10%;
+
+  &--background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 19;
   }
 
 }

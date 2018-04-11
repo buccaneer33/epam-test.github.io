@@ -15,7 +15,8 @@
     <article class="booklist">
       <h1 class="booklist__title">Книжная полка</h1>
       <button id="button__adding-form--open1" class="booklist__button button--add-book">Добавить книгу</button>
-      <table class="booklist__table" border="0" cellspacing="0">
+      <table  class="booklist__table" border="0" cellspacing="0">
+        <tbody id="booklist__table">
         <tr class="booklist__item">
           <td class="booklist__item--photo">
             <img src="img/book1.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
@@ -112,8 +113,8 @@
             </div>
           </td>
         </tr>
-
-      </table>
+      </tbody>
+    </table>
 
     </article>
     <article id="add-book" class="add-book visible--disable">
@@ -124,22 +125,22 @@
             <form name="add-book__form" class="add-book__form">
               <p>
                 <label class="add-book__label">Наименование</label><br>
-                <input type="text" class="add-book__input" name="add-book__desc">
+                <input id="bookName" type="text" class="add-book__input" name="add-book__desc">
             </p>
             <p>
               <label class="add-book__label">Автор</label><br>
-              <input type="text" class="add-book__input" name="add-book__autor">
+              <input id="bookAutor" type="text" class="add-book__input" name="add-book__autor">
             </p>
             <p>
               <label class="add-book__label">Год выпуска</label><br>
-              <input type="text"  size="5" class="add-book__year" name="add-book__year">
+              <input id="bookYear" type="text"  size="5" class="add-book__input add-book__input--year" name="add-book__year">
             </p>
             <p>
               <label class="add-book__label">Изображение</label><br>
-              <input type="text" class="add-book__input" name="add-book__img">
+              <input id="bookPicture" type="text" class="add-book__input" name="add-book__img">
             </p>
             <p>
-              <input class="add-book__button button--save" type="button" name="add-book--save-form" value="Сохранить"/>
+              <input id="button--save" class="add-book__button button--save" type="button" name="add-book--save-form" value="Сохранить"/>
               <input id="button--close"  class="add-book__button button--close" type="button" name="add-book--close-form" value="Отменить"/>
             </p>
           </div>
@@ -148,7 +149,7 @@
 
     </article>
   </section>
-<div id="add-book--background" class="visible--disable"></div>
+<div id="add-book--background" class="add-book--background visible--disable"></div>
 
 
 
