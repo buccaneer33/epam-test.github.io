@@ -36,14 +36,14 @@
           </td>
           <td class="booklist__item--button-block">
             <div class="booklist__item--buttons">
-              <button  class="booklist__button button--edit-book">Редактировать</button>
-              <button  class="booklist__button button--del-book">Удалить</button>
+              <button data-action="edit" class="booklist__button button--edit-book">Редактировать</button>
+              <button data-action="delete"  class="booklist__button button--del-book">Удалить</button>
             </div>
           </td>
         </tr>
         <tr class="booklist__item">
           <td class="booklist__item--photo">
-            <img src="img/book2.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+            <img src="img/book2.jpg" alt="Изучаем программирование на Javascript" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
           <div class="book__description">
@@ -60,14 +60,14 @@
           </td>
           <td class="booklist__item--button-block">
             <div class="booklist__item--buttons">
-              <button  class="booklist__button button--edit-book">Редактировать</button>
-              <button  class="booklist__button button--del-book">Удалить</button>
+              <button data-action="edit" class="booklist__button button--edit-book">Редактировать</button>
+              <button data-action="delete" class="booklist__button button--del-book">Удалить</button>
             </div>
           </td>
         </tr>
         <tr class="booklist__item">
           <td class="booklist__item--photo">
-            <img src="img/book3.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+            <img src="img/book3.jpg" alt="Секреты Javascript ниндзя" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
           <div class="book__description">
@@ -84,14 +84,14 @@
           </td>
           <td class="booklist__item--button-block">
             <div class="booklist__item--buttons">
-              <button class="booklist__button button--edit-book">Редактировать</button>
-              <button class="booklist__button button--del-book">Удалить</button>
+              <button data-action="edit" class="booklist__button button--edit-book">Редактировать</button>
+              <button data-action="delete" class="booklist__button button--del-book">Удалить</button>
             </div>
           </td>
         </tr>
         <tr class="booklist__item">
           <td class="booklist__item--photo">
-            <img src="img/book4.jpg" alt="Javascript и Jquery" width="60px" height="100px"/>
+            <img src="img/book4.jpg" alt="ES6 и не только" width="60px" height="100px"/>
           </td>
           <td class="booklist__item--description">
           <div class="book__description">
@@ -108,8 +108,8 @@
           </td>
           <td class="booklist__item--button-block">
             <div class="booklist__item--buttons">
-              <button  class="booklist__button button--edit-book">Редактировать</button>
-              <button  class="booklist__button button--del-book">Удалить</button>
+              <button data-action="edit" class="booklist__button button--edit-book">Редактировать</button>
+              <button data-action="delete" class="booklist__button button--del-book">Удалить</button>
             </div>
           </td>
         </tr>
@@ -138,6 +138,7 @@
             <p>
               <label class="add-book__label">Изображение</label><br>
               <input id="bookPicture" type="text" class="add-book__input" name="add-book__img">
+              <input id="bookNam" type="text" class="add-book__input visible--disable" name="add-book__nam">
             </p>
             <p>
               <input id="button--save" class="add-book__button button--save" type="button" name="add-book--save-form" value="Сохранить"/>
