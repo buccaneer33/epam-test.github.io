@@ -1,20 +1,6 @@
-		var alert1 = function(message){
-			alert(message);
-		};
-	
-	var getButtonsId = function(){
-		var buttons = document.querySelectorAll(".button--del-book");
-				for(var i=0; i<buttons.length;i++){
-				buttons[i].addEventListener("click", alert1(i));
-		}
-	};
-	var deleteClickers = function(){
-		var buttons = document.querySelectorAll(".button--del-book");
-				for(var i=0; i<buttons.length;i++){
-				buttons[i].removeEventListener("click", alert1(i));
-		}
-	};
-var clearInputs = function(){
+window.onload = function () {
+
+  var clearInputs = function(){
 		var Inputs = document.getElementsByClassName("add-book__input");
 		for(var i = 0; i < Inputs.length; i++){
 			if(Inputs[i].type == 'text'){Inputs[i].value = '';}};
@@ -86,21 +72,12 @@ var clearInputs = function(){
 		}
 	}
 	var selectedId;
-	var deleteItem = function(selectedId){
+		var deleteItem = function(selectedId){
 		var tBody = document.getElementById('booklist__tbody');
 		var elementToDel = tBody.children[selectedId];
 		//elementToDel.remove();
 	}
-
-
-
-window.onload = function () {
-	
-
-	//getButtonsId();
-
-  
-	/*var getButtonsId = function(){
+	var getButtonsId = function(){
 			var buttons = document.querySelectorAll(".button--del-book");
 				for(var i=0; i<buttons.length;i++){
 				buttons[i].id = [i];
@@ -117,13 +94,10 @@ window.onload = function () {
 
 		}
 		alert(selectedId);
-	}*/
-	//getButtonsId();
-
-	
+	}
 
 
-	
+	getButtonsId();
 	document.getElementById('button__adding-form--open1').onclick = function() {
 	clearInputs();
 	openForm();
@@ -140,10 +114,8 @@ window.onload = function () {
 	document.getElementById('button--save').onclick = function() {
 	checkInputs();
 	createBook(data);
-	deleteClickers();
-	//getButtonsId();
+	getButtonsId();
 	}
-	
 	
 
 }

@@ -69,12 +69,15 @@ window.onload = function () {
 		return data;
   };
 	var createBook = function(data){
+		if((data.bookName.value!=='')&&(data.bookAutor.value!=='')&&(data.bookYear.value!=='')&&(data.bookPicture.value!=='')){
 		var table = document.getElementById('booklist__table');
 		var newTr = document.createElement('tr');
 		newTr.classList.add("booklist__item");
-		newTr.innerHTML = '<td class=\"booklist__item--photo\"><img src=\''+data.bookPicture+'alt=\''+data.bookName+'/></td><td class=\"booklist__item--description\"><div class=\"book__description\"><h6 class=\"book__description-name\">'+data.bookPicture+'</h6><span class=\"book__description-autor\">'+data.bookAutor+'</span><span class=\"book__description-year\">'+data.bookYear+'</span></div></td><td class=\"booklist__item--button-block\"><div class=\"booklist__item--buttons\"><button class=\"booklist__button button--edit-book\">Редактировать</button><button class=\"booklist__button button--del-book\">Удалить</button></div></td>';
+		newTr.innerHTML = '<td class=\"booklist__item--photo\"><img src=\''+data.bookPicture+'alt=\''+data.bookName+'/></td><td class=\"booklist__item--description\"><div class=\"book__description\"><h6 class=\"book__description-name\">'+data.bookPicture+'</h6><span class=\"book__description-autor\">'+data.bookAutor+'</span><span class=\"book__description-year\">'+data.bookYear+' г.</span></div></td><td class=\"booklist__item--button-block\"><div class=\"booklist__item--buttons\"><button class=\"booklist__button button--edit-book\">Редактировать</button><button class=\"booklist__button button--del-book\">Удалить</button></div></td>';
 		table.parentNode.insertBefore(newTr, table.nextSibling);
-
+		data.bookName = null;data.bookAutor = null;data.bookYear = null;data.bookPicture = null;data = null;
+		closeForm();
+		}
 	}
 
 
@@ -94,6 +97,19 @@ window.onload = function () {
 	document.getElementById('button--save').onclick = function() {
 	checkInputs();
 	createBook(data);
-	closeForm();
 	}
+	document.getElementsByClassName("button--del-book").onclick = function() {
+	alert('1');
+	}
+	var button = document.querySelectorAll(".button--del-book");
+		for(var i=0; i<button.length;i++){
+			//alert(button[i]);
+			button[i].addEventListener("click", function() {
+				//var table__tr = button[i].closest('.booklist__item');
+				//alert(button[i].closest('.booklist__item').tagName);
+				alert(i);
+			});
+			alert(button[i]);
+
+		}
 }
