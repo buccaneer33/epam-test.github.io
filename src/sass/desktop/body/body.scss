@@ -1,6 +1,6 @@
 .body{
   background-color: #ffffff;
-  background-image: url(/img/biblioteka.jpg);
+  background-image: url(../img/biblioteka.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,7 +16,7 @@
 
 
       &--flexbox{
-          @include flexbox(flex,column,center,center,nowrap);
+          @include flexbox(flex,row,center,center,wrap);
           }
 }
 .wrapper{
@@ -25,7 +25,7 @@
   height: 40%;
   margin: 0 auto;
   background-color: #eee;
-  @include flexbox(flex,column,center,center,nowrap);
+  @include flexbox(flex,row,center,center,wrap);
 }
 .visible--anable{
   display: inherit;
