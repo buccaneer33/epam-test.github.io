@@ -1,9 +1,19 @@
 window.onload = function () {
 
   var clearInputs = function(){
+	  	var bookName = document.getElementById('bookName').nextSibling;
+		if(bookName){bookName.remove()}
+		var bookAutor = document.getElementById('bookAutor').nextSibling;
+		if(bookAutor){bookAutor.remove()}
+		var bookYear = document.getElementById('bookYear').nextSibling;
+		if(bookYear){bookYear.remove()}
+		var bookPicture = document.getElementById('bookPicture').nextSibling;
+		if(bookPicture){bookPicture.remove()}
+
 		var Inputs = document.getElementsByClassName("add-book__input");
 		for(var i = 0; i < Inputs.length; i++){
-			if(Inputs[i].type == 'text'){Inputs[i].value = '';}};
+			if(Inputs[i].type == 'text'){Inputs[i].value = '';}
+			};
 	};
   var openForm = function() {
 		document.getElementById('add-book--background').classList.remove("visible--disable");
@@ -20,42 +30,81 @@ window.onload = function () {
 		var bookYear = document.getElementById('bookYear');
 		var bookPicture = document.getElementById('bookPicture');
 		var bookNam = document.getElementById('bookNam');
-  		if(bookName.value!==''){data.bookName=bookName.value}else{
-  			var newP = document.createElement('p');
-  				newP.innerHTML = 'Введите название книги!';
-  				bookName.parentNode.insertBefore(newP, bookName.nextSibling);
-  				return false;
+
+  		if(bookName.value!==''){
+				data.bookName=bookName.value;
+				var bookNameP = bookName.nextSibling;
+				if(bookNameP){bookNameP.remove()}
+			}else{
+				var bookNameP = bookName.nextSibling;
+				if(bookNameP){bookNameP.remove()}
+				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
+				newP.innerHTML = 'Введите название книги!';
+				bookName.parentNode.insertBefore(newP, bookName.nextSibling);
+				return false;
   			};
 		data.bookNam=bookNam.value;
-  		if(bookAutor.value!==''){data.bookAutor=bookAutor.value}else{
-  			var newP = document.createElement('p');
-  				newP.innerHTML = 'Введите автора книги!';
-  				bookAutor.parentNode.insertBefore(newP, bookAutor.nextSibling);
-  				return false;
-  			};
+
+  		if(bookAutor.value!==''){
+			data.bookAutor=bookAutor.value;
+			var bookAutorP = bookAutor.nextSibling;
+			if(bookAutorP){bookAutorP.remove()}
+		}else{
+				var bookAutorP = bookAutor.nextSibling;
+				if(bookAutorP){bookAutorP.remove()}
+				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
+				newP.innerHTML = 'Введите автора книги!';
+				bookAutor.parentNode.insertBefore(newP, bookAutor.nextSibling);
+				return false;
+			};
 		if(bookYear.value==''){
-			var newP = document.createElement('p');
+				var bookYearP = bookYear.nextSibling;
+				if(bookYearP){bookYearP.remove()}
+				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
 				newP.innerHTML = 'Введите год издания книги!';
 				bookYear.parentNode.insertBefore(newP, bookYear.nextSibling);
 				return false;
 			}else if(isNaN(bookYear.value)&&( parseInt( bookYear.value ) != bookYear.value )){
-			var newP = document.createElement('p');
+				var bookYearP = bookYear.nextSibling;
+				if(bookYearP){bookYearP.remove()}
+				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
 				newP.innerHTML = 'Год издания книги должен быть целым числом!';
 				bookYear.parentNode.insertBefore(newP, bookYear.nextSibling);
 				return false;
 			}else if(bookYear.value>(new Date()).getFullYear()){
+				var bookYearP = bookYear.nextSibling;
+				if(bookYearP){bookYearP.remove()}
 				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
 				newP.innerHTML = 'Год издания книги не может превышать текущий год!';
 				bookYear.parentNode.insertBefore(newP, bookYear.nextSibling);
 				return false;
 			}else if(bookYear.value<1900){
+				var bookYearP = bookYear.nextSibling;
+				if(bookYearP){bookYearP.remove()}
 				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
 				newP.innerHTML = 'Слишком древняя книга!';
 				bookYear.parentNode.insertBefore(newP, bookYear.nextSibling);
 				return false;
-			}else{data.bookYear=bookYear.value};
-		if(bookPicture.value!==''){data.bookPicture=bookPicture.value}else{
-			var newP = document.createElement('p');
+			}else{
+				data.bookYear=bookYear.value
+				var bookYearP = bookYear.nextSibling;
+				if(bookYearP){bookYearP.remove()}
+				};
+		if(bookPicture.value!==''){
+			data.bookPicture=bookPicture.value;
+			var bookPictureP = bookPicture.nextSibling;
+			if(bookPictureP){bookPictureP.remove()}
+			}else{
+				var bookPictureP = bookPicture.nextSibling;
+				if(bookPictureP){bookPictureP.remove()}
+				var newP = document.createElement('p');
+				newP.classList.add("p--warning");
 				newP.innerHTML = 'Введите адрес изображения книги!';
 				bookPicture.parentNode.insertBefore(newP, bookPicture.nextSibling);
 				return false;
@@ -70,30 +119,25 @@ window.onload = function () {
 			var newTr = document.createElement('tr');
 			newTr.classList.add("booklist__item");
 			newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
-			
-			
 		if(data.bookNam){
-  			tBody.replaceChild(newTr, elementToEdit);
-  			putIdButton();
-  			closeForm();
-
+				tBody.replaceChild(newTr, elementToEdit);
+				putIdButton();
+				closeForm();
 		    }else{
-      		tBody.appendChild(newTr);
-      		putIdButton();
-      		closeForm();
+				tBody.appendChild(newTr);
+				putIdButton();
+				closeForm();
 		    }
 			data.bookName = null;data.bookAutor = null;data.bookYear = null;data.bookPicture = null;data = null;
 		 }
 	}
-
 	var deleteItem = function(selectedId){
   		var tBody = document.getElementById('booklist__tbody');
   		var elementToDel = tBody.children[selectedId];
   		elementToDel.remove();
   		putIdButton();
 	}
-
-	var takeEditData = function(selectedId){
+		var takeEditData = function(selectedId){
   		var tBody = document.getElementById('booklist__tbody');
   		var elementToEdit = tBody.children[selectedId];
   		var bookPicture = elementToEdit.querySelector('.booklist__item--photo').firstElementChild.src;
@@ -111,7 +155,7 @@ window.onload = function () {
   		editData(bookNam,bookPicture,bookName,bookAutor,bookYear);
   		putIdButton();
 	}
-	var editData = function(selectedId,bookPicture,bookName,bookAutor,bookYear){
+		var editData = function(selectedId,bookPicture,bookName,bookAutor,bookYear){
     	clearInputs();
     	openForm();
     	var editForm = document.getElementById('add-book');
@@ -124,10 +168,10 @@ window.onload = function () {
 	};
 
 	var putIdButton = function(){
-			var buttons = document.querySelectorAll(".booklist__item--buttons");
-			for(var i=0; i<buttons.length;i++){
-				      buttons[i].id = [i];
-		          }
+	var buttons = document.querySelectorAll(".booklist__item--buttons");
+	for(var i=0; i<buttons.length;i++){
+		buttons[i].id = [i];
+		}
 	};
 
 function Menu(elem) {
