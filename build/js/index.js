@@ -64,29 +64,25 @@ window.onload = function () {
   };
 	var createBook = function(data){
 		if((data.bookName.value!=='')&&(data.bookAutor.value!=='')&&(data.bookYear.value!=='')&&(data.bookPicture.value!=='')){
+			var tBody = document.getElementById('booklist__tbody');
+			var nam = data.bookNam;
+			var elementToEdit = tBody.children[nam];
+			var newTr = document.createElement('tr');
+			newTr.classList.add("booklist__item");
+			newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
+			
+			
 		if(data.bookNam){
-  			var nam = data.bookNam;
-  			var tBody = document.getElementById('booklist__tbody');
-  			var elementToEdit = tBody.children[nam];
-  			elementToEdit.remove();
-  			var newTr = document.createElement('tr');
-  			newTr.classList.add("booklist__item");
-  			newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
-  			tBody.appendChild(newTr);
-  			data.bookName = null;data.bookAutor = null;data.bookYear = null;data.bookPicture = null;data = null;
+  			tBody.replaceChild(newTr, elementToEdit);
   			putIdButton();
   			closeForm();
 
 		    }else{
-      		var table = document.getElementById('booklist__tbody');
-      		var newTr = document.createElement('tr');
-      		newTr.classList.add("booklist__item");
-      		newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
-      		table.appendChild(newTr);
-      		data.bookName = null;data.bookAutor = null;data.bookYear = null;data.bookPicture = null;data = null;
+      		tBody.appendChild(newTr);
       		putIdButton();
       		closeForm();
 		    }
+			data.bookName = null;data.bookAutor = null;data.bookYear = null;data.bookPicture = null;data = null;
 		 }
 	}
 
@@ -108,8 +104,10 @@ window.onload = function () {
   		bookAutor = bookAutor.trim();
   		var bookYear = elementToEdit.querySelector('.book__description-year').innerHTML;
   		bookYear = bookYear.trim();
+		bookYear = parseInt(bookYear);
   		var bookNam = selectedId;
   		bookNam = bookNam.trim();
+		bookNam = parseInt(bookNam);
   		editData(bookNam,bookPicture,bookName,bookAutor,bookYear);
   		putIdButton();
 	}
