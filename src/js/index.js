@@ -207,6 +207,4 @@ function Menu(elem) {
   	createBook(data);
   	putIdButton();
 	}
-
-
 }//закрытие документа

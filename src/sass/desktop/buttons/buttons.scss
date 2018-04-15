@@ -11,10 +11,10 @@
     transition: 0.5s;
     border: 1px solid #ccc;
     position: relative;
-    //font-family: 'PT_Sans-Web-Regular',  sans-serif;
+    font-family: 'PT_Sans-Web-Regular',  sans-serif;
 
     &::before{
-      font-family: FontAwesome;
+      font-family: 'FontAwesome';
       content: "\f02d";
       color: #fff;
       position: absolute;
@@ -32,8 +32,9 @@
   }
   }
   &--edit-book{
-    width: 130px;
+    width: 150px;
     height: 30px;
+    padding-left:15px !important;
     color: #bbb;
     font-size: 15px;
     background-color: #fff;
@@ -42,18 +43,20 @@
     border: 1px solid #bbb;
     cursor: pointer;
     transition: 0.5s;
+    position: relative;
 
     &::before{
-      font-family: FontAwesome;
-      content: "\f040";
-      color: #fff;
+      font-family: 'FontAwesome';
+      content: '\f040';
+      color: #ccc;
       position: absolute;
       font-weight: bold;
-      font-size: 21px;
-      width: 20px;
-      height: 30px;
-      left: 20px;
-      top: 12px;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      left: 5px;
+      top: 7px;
+      transition: 0.5s;
     }
     &:hover{
       transition: 0.5s;
@@ -66,18 +69,19 @@
   &--del-book{
       @extend .button--edit-book;
       transition: 0.5s;
+      position: relative;
 
       &::before{
-        font-family: FontAwesome;
-        content: "\f014" !important;
-        color: #fff;
+        font-family: 'FontAwesome';
+        content: '\f014' !important;
+        color: #ccc;
         position: absolute;
         font-weight: bold;
-        font-size: 21px;
-        width: 20px;
-        height: 30px;
-        left: 20px;
-        top: 12px;
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        left: 7px;
+        top: 7px;
     }
     &:hover{
       transition: 0.5s;
@@ -93,17 +97,19 @@
     transition: 0.5s;
 
     &::before{
-      font-family: FontAwesome;
-      content: "\f02d";
-      color: #fff;
+      font-family: 'FontAwesome';
+      content: '\f0c7' !important;
+      color: #eee;
       position: absolute;
       font-weight: bold;
-      font-size: 21px;
-      width: 20px;
-      height: 30px;
-      left: 20px;
-      top: 12px;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      left: 7px;
+      top: 7px;
   }
+
+
   &:hover{
     transition: 0.5s;
     background-color: #7f7;
@@ -121,17 +127,18 @@
     transition: 0.5s;
 
     &::before{
-      font-family: FontAwesome;
-      content: "\f02d";
-      color: #fff;
+      font-family: 'FontAwesome';
+      content: '\f05e' !important;
+      color: #ccc;
       position: absolute;
       font-weight: bold;
-      font-size: 21px;
-      width: 20px;
-      height: 30px;
-      left: 20px;
-      top: 12px;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      left: 7px;
+      top: 7px;
   }
+
   &:hover{
     transition: 0.5s;
     background-color: #e88;
@@ -140,4 +147,8 @@
 
   }
 
+}
+.button--edit-book:hover:before{
+  transition: 0.5s;
+  color: #fff;
 }
