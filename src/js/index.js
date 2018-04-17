@@ -31,7 +31,8 @@ window.onload = function () {
 		var bookPicture = document.getElementById('bookPicture');
 		var bookNam = document.getElementById('bookNam');
 
-  		if(bookName.value!==''){
+
+		if(bookName.value.length > 3){
 				data.bookName=bookName.value;
 				var bookNameP = bookName.nextSibling;
 				if(bookNameP){bookNameP.remove()}
@@ -40,13 +41,13 @@ window.onload = function () {
 				if(bookNameP){bookNameP.remove()}
 				var newP = document.createElement('p');
 				newP.classList.add("p--warning");
-				newP.innerHTML = 'Введите название книги!';
+				newP.innerHTML = 'Введите название книги (минимум 4 символа)!';
 				bookName.parentNode.insertBefore(newP, bookName.nextSibling);
 				return false;
   			};
 		data.bookNam=bookNam.value;
 
-  		if(bookAutor.value!==''){
+  		if(bookAutor.value.length > 3){
 			data.bookAutor=bookAutor.value;
 			var bookAutorP = bookAutor.nextSibling;
 			if(bookAutorP){bookAutorP.remove()}
@@ -55,7 +56,7 @@ window.onload = function () {
 				if(bookAutorP){bookAutorP.remove()}
 				var newP = document.createElement('p');
 				newP.classList.add("p--warning");
-				newP.innerHTML = 'Введите автора книги!';
+				newP.innerHTML = 'Введите автора книги(минимум 4 символа)!';
 				bookAutor.parentNode.insertBefore(newP, bookAutor.nextSibling);
 				return false;
 			};
@@ -96,7 +97,7 @@ window.onload = function () {
 				var bookYearP = bookYear.nextSibling;
 				if(bookYearP){bookYearP.remove()}
 				};
-		if(bookPicture.value!==''){
+		if(bookPicture.value.length > 3){
 			data.bookPicture=bookPicture.value;
 			var bookPictureP = bookPicture.nextSibling;
 			if(bookPictureP){bookPictureP.remove()}
@@ -105,11 +106,14 @@ window.onload = function () {
 				if(bookPictureP){bookPictureP.remove()}
 				var newP = document.createElement('p');
 				newP.classList.add("p--warning");
-				newP.innerHTML = 'Введите адрес изображения книги!';
+				newP.innerHTML = 'Введите адрес изображения книги (минимум 4 символа)!';
 				bookPicture.parentNode.insertBefore(newP, bookPicture.nextSibling);
 				return false;
 			};
-		return data;
+
+		if((data.bookName.value!=='')&&(data.bookAutor.value!=='')&&(data.bookYear.value!=='')&&(data.bookPicture.value!=='')){
+		createBook(data);
+		}
   };
 	var createBook = function(data){
 		if((data.bookName.value!=='')&&(data.bookAutor.value!=='')&&(data.bookYear.value!=='')&&(data.bookPicture.value!=='')){
@@ -204,7 +208,44 @@ function Menu(elem) {
 	}
 	document.getElementById('button--save').onclick = function() {
   	checkInputs();
-  	createBook(data);
   	putIdButton();
 	}
+document.getElementById('bookName').onkeyup = function(event){
+event = event || window.event;
+if ((event.keyCode == 0xA)||(event.keyCode == 0xD))
+ {
+	checkInputs();
+  	putIdButton();
+ return false;
+ }
+};
+document.getElementById('bookAutor').onkeyup = function(event){
+event = event || window.event;
+if ((event.keyCode == 0xA)||(event.keyCode == 0xD))
+ {
+	checkInputs();
+  	putIdButton();
+ return false;
+ }
+};
+document.getElementById('bookYear').onkeyup = function(event){
+event = event || window.event;
+if ((event.keyCode == 0xA)||(event.keyCode == 0xD))
+ {
+	checkInputs();
+  	putIdButton();
+ return false;
+ }
+};
+document.getElementById('bookPicture').onkeyup = function(event){
+event = event || window.event;
+if ((event.keyCode == 0xA)||(event.keyCode == 0xD))
+ {
+	checkInputs();
+  	putIdButton();
+ return false;
+ }
+};
+
+
 }//закрытие документа

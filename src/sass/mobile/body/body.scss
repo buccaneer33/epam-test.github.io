@@ -1,24 +1,39 @@
 .body{
   background-color: #ffffff;
+  background-image: url(../img/m-biblioteka.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   width: 100%;
-  max-width: 1920px;
-  min-width: 1147px;
-  //height: 100vh;
-  min-height: 100%;
-  margin: 0 auto;
+  //max-width: 1920px;
+  //min-width: 1147px;
+//  min-height: 100vh;
+  //margin: 0 auto;
   overflow: auto;
-  min-height: 300px;
-
+  //min-height: 300px;
   font-family: 'PT_Sans-Web-Regular',  sans-serif;
 
 
       &--flexbox{
-          @include flexbox(flex,column,stretch,flex-start,nowrap);
+          @include flexbox(flex,row,center,center,wrap);
           }
 }
-.wrapper{
-  width:100%;
+.wrapper{/*
+  max-width: 990px;
+  width: 70%;
+  height: 40%;*/
   margin: 0 auto;
-  background-color: #f00;
+  background-color: #eee;
+  @include flexbox(flex,row,center,center,wrap);
 
+}
+.visible--anable{
+  display: inherit;
+}
+.visible--disable{
+  display: none;
+}
+.p--warning{
+  color:red;
 }

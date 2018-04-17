@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Книжная полка</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/m-style.css" rel="stylesheet" type="text/css">
 <link href="fonts/fonts.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="js/index.js" type="text/javascript"></script>
@@ -19,6 +19,35 @@
 <meta name="msapplication-config" content="img/ico/browserconfig.xml">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+
+<!-- Facebook -->
+<meta property="og:title" content="Книжная полка" />
+<meta property="og:description" content="Пример работы приложения 	&#8220;Книжная полка &#8221;. Приложение вполнено на HTML5, CSS3, Javascript" />
+<meta property="og:image" content="https://buccaneer33.github.io/epam-test.github.io/build/img/ss/w600_315.png" />
+<meta property="og:url" content="https://buccaneer33.github.io/epam-test.github.io/build/" />
+<meta property="og:site_name" content="Buccaneer" />
+<!-- /Facebook -->
+
+<!-- VK -->
+<link rel="image_src" href="https://buccaneer33.github.io/epam-test.github.io/build/img/ss/w130_130.png" />
+<meta property="og:image" content="https://buccaneer33.github.io/epam-test.github.io/build/img/ss/w280x150.png" />
+<!-- /VK -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="Buccaneer" />
+<meta name="twitter:site" content="Buccaneer" />
+<meta name="twitter:title" content="Кннижная полка" />
+<meta name="twitter:description" content="Пример работы приложения 	&#8220;Книжная полка &#8221;. Приложение вполнено на HTML5, CSS3, Javascript" />
+<meta name="twitter:image" content="https://buccaneer33.github.io/epam-test.github.io/build/img/ss/w280x150.png" />
+<meta name="twitter:domain" content="https://github.com/buccaneer33" />
+<!-- /Twitter -->
+
+<!-- Google Plus -->
+<meta itemprop="name" content="Buccaneer" />
+<meta itemprop="description" content="Пример работы приложения 	&#8220;Книжная полка &#8221;. Приложение вполнено на HTML5, CSS3, Javascript" />
+<meta itemprop="image" content="https://buccaneer33.github.io/epam-test.github.io/build/img/ss/w600_315.png" />
+<!-- /Google Plus -->
 </head>
 <body class="body body--flexbox">
   <section class="wrapper">
@@ -135,19 +164,19 @@
             <form id="form" name="add-book__form" class="add-book__form" action="">
               <p>
                 <label class="add-book__label">Наименование</label><br>
-                <input id="bookName" type="text" class="add-book__input" name="add-book__desc">
+                <input id="bookName" type="text" class="add-book__input" name="add-book__desc" placeholder="Введите названние книги">
             </p>
             <p>
               <label class="add-book__label">Автор</label><br>
-              <input id="bookAutor" type="text" class="add-book__input" name="add-book__autor">
+              <input id="bookAutor" type="text" class="add-book__input" name="add-book__autor" placeholder="Введите автора книги">
             </p>
             <p>
               <label class="add-book__label">Год выпуска</label><br>
-              <input id="bookYear" type="text"  size="5" class="add-book__input add-book__input--year" name="add-book__year">
+              <input id="bookYear" type="text"  size="5" class="add-book__input add-book__input--year" name="add-book__year" placeholder="Год">
             </p>
             <p>
               <label class="add-book__label">Изображение</label><br>
-              <input id="bookPicture" type="text" class="add-book__input" name="add-book__img">
+              <input id="bookPicture" type="text" class="add-book__input" name="add-book__img" placeholder="Введите адрес изображение">
             </p>
             <p>  <input id="bookNam" type="text" class="add-book__input visible--disable" name="add-book__nam"></p>
             <p>
