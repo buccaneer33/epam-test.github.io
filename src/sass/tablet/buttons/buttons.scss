@@ -1,0 +1,129 @@
+
+.button{
+
+
+  &--add-book{
+    color: #fff;
+    font-size: 19px;
+    background-color: #ccc;
+    padding: 6px 11px 6px 33px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #ccc;
+    position: relative;
+    font-family: 'PT_Sans-Web-Regular',  sans-serif;
+
+    &::before{
+      font-family: 'FontAwesome';
+      content: "\f02d";
+      color: #fff;
+      position: absolute;
+      font-weight: bold;
+      font-size: 21px;
+      width: 20px;
+      height: 30px;
+      left: 8px;
+      top: 9px;
+  }
+  &:hover{
+    transition: 0.5s;
+    background-color: #88e;
+    border: 1px solid #88e;
+  }
+  }
+  &--edit-book{
+    width: 30px;
+    height: 30px;
+    //padding-left:15px !important;
+    color: #bbb;
+    font-size: 0;
+    background-color: #fff;
+    padding: 5px 5px 5px 5px ;
+    margin: 5px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    &::before{
+      font-family: 'FontAwesome';
+      content: '\f040';
+      color: #ccc;
+      position: absolute;
+      font-weight: bold;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+      left: 7px;
+      top: 7px;
+      transition: 0.5s;
+    }
+    &:hover{
+      transition: 0.5s;
+      background-color: #0d8602;
+      border: 1px solid #0d8602;
+      color: #fff;
+    }
+
+  }
+  &--del-book{
+      @extend .button--edit-book;
+      transition: 0.5s;
+      position: relative;
+
+      &::before{
+        font-family: 'FontAwesome';
+        content: '\f014' !important;
+        color: #ccc;
+        position: absolute;
+        font-weight: bold;
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        left: 7px;
+        top: 7px;
+    }
+    &:hover{
+      transition: 0.5s;
+      background-color: #e88;
+      border: 1px solid #e88;
+    }
+  }
+  &--save{
+    @extend .button--edit-book;
+    background-color: #bbb;
+    color: #eee;
+    position: relative;
+    transition: 0.5s;
+    font-size: 12px;
+    width: 90px;
+    height: 30px;
+
+  &:hover{
+    transition: 0.5s;
+    background-color: #7f7;
+    border: 1px solid #7f7;
+    color: #fff;
+  }
+
+  }
+  &--close{
+    @extend .button--save;
+    background-color: #eee;
+    border: 1px solid #eee;
+    color: #bbb;
+  &:hover{
+    transition: 0.5s;
+    background-color: #e88;
+    border: 1px solid #e88;
+  }
+
+  }
+
+}
+.button--edit-book:hover:before{
+  transition: 0.5s;
+  color: #fff;
+}

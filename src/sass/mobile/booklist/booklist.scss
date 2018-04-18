@@ -1,22 +1,17 @@
 .booklist{
-  //max-width: 940px;
-  width: 100%;
-  //margin: 0 auto;
-  //padding: 15px 85px;
+  width: calc(100% - 10px);
   background-color: #eee;
-  //text-align: left;
-
 
   &__title{
-    margin: 0 auto 24px;
-    font-size: 43px;
+    margin: 5px 10px;
+    font-size: 28px;
   }
   &__button{
 
   }
   &__table{
     background-color: #fff;
-    width: 100%;
+    //width: 100%;
     margin-top: 20px;
   }
   &__item{
@@ -24,10 +19,10 @@
     &--photo{
       width: 10%;
       border-bottom: 1px solid #eee;
-      padding: 15px 30px;
+      padding: 10px;
     }
     &--description{
-      width: 70%;
+      width: 80%;
       border-bottom: 1px solid #eee;
 
       &-block{
@@ -35,9 +30,9 @@
       }
     }
     &--button-block{
-      width: 20%;
+      width: 10%;
+      padding-right: 10px;
       border-bottom: 1px solid #eee;
-
     }
     &--buttons{
       @include flexbox(flex,column,center,center,nowrap);
@@ -61,6 +56,7 @@
 }
 .add-book{
   @extend .booklist;
+  width: 90%;
   z-index: 100;
   position: absolute;
   &__title{
@@ -71,8 +67,7 @@
   }
   &__form{
     @extend .booklist__table;
-    padding: 10px 30px;
-    width: calc(100% - 60px);
+    padding: 10px;
   }
   &__label{
     font-size: 14px;
@@ -80,11 +75,11 @@
   }
   &__input{
     margin: 10px 0;
-    width: 80%;
+    width: 100%;
     height: 20px;
 
     &--year{
-      width: 10%;
+      width: 40%;
     }
   }
 

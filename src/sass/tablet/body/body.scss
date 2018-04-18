@@ -1,24 +1,39 @@
 .body{
   background-color: #ffffff;
-  width: 100%;
-  max-width: 1920px;
-  min-width: 1147px;
-  //height: 100vh;
-  min-height: 100%;
-  margin: 0 auto;
+  background-image: url(../img/m-biblioteka.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  width: calc(100vw - 1px);
+  //width: 100vw;
+  //height: calc(100% - 10px);
+  height: 100vh;
   overflow: auto;
-  min-height: 300px;
-
+  margin: 0;
+  padding: 5px;
   font-family: 'PT_Sans-Web-Regular',  sans-serif;
 
 
       &--flexbox{
-          @include flexbox(flex,column,stretch,flex-start,nowrap);
+          @include flexbox(flex,row,center,center,wrap);
           }
 }
 .wrapper{
-  width:100%;
-  margin: 0 auto;
-  background-color: #f00;
+  width: calc(100% - 10px);
+  max-height: calc(100% - 10px);
+  background-color: #eee;
+  @include flexbox(flex,row,center,center,wrap);
 
+}
+.visible--anable{
+  display: inherit;
+}
+.visible--disable{
+  display: none;
+}
+.p--warning{
+  color:red;
+  margin: 1px;
+  font-size: 14px;
 }

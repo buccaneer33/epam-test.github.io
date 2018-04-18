@@ -1,162 +1,98 @@
-.header{
-  //flex-basis: 600px;
-  //height: 600px;
-  width: 100%;
-  //max-width: 1920px;
-  //min-width: 1280px;
-  background-color: #dcc;
-  background: url(../img/1st-screen-1920x1080-dark.jpg) no-repeat;
-  background-size: 165%;
-  background-position: left 49% top -1%;
-  padding: 0 0 126px 0;
+.booklist{
+  width: calc(100% - 10px);
+  background-color: #eee;
 
-  &--flexbox{
-    @include flexbox(flex,column,center,flex-start,nowrap);
+  &__title{
+    margin: 5px 10px;
+    font-size: 28px;
+  }
+  &__button{
 
   }
+  &__table{
+    background-color: #fff;
+    //width: 100%;
+    margin-top: 20px;
+  }
+  &__item{
+    height: 100px;
+    &--photo{
+      width: 10%;
+      border-bottom: 1px solid #eee;
+      padding: 10px;
+    }
+    &--description{
+      width: 80%;
+      border-bottom: 1px solid #eee;
 
-  &__menu{
+      &-block{
+        @include flexbox(flex,column,center,center,nowrap);
+      }
+    }
+    &--button-block{
+      width: 10%;
+      padding-right: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    &--buttons{
+      @include flexbox(flex,column,center,center,nowrap);
+    }
+  }
+}
+.book__description{
+  @include flexbox(flex,column,flex-start,center,nowrap);
+  padding: 10px 20px;
+  &-name{
+    font-size: 14px;
+    margin: 5px 0;
+
+  }
+  &-autor{
+    font-size: 14px;
+  }
+  &-year{
+    font-size: 14px;
+  }
+}
+.add-book{
+  @extend .booklist;
+  width: 90%;
+  z-index: 100;
+  position: absolute;
+  &__title{
+    @extend .booklist__title;
+  }
+  &__button{
+
+  }
+  &__form{
+    @extend .booklist__table;
+    padding: 10px;
+  }
+  &__label{
+    font-size: 14px;
+    color: #333;
+  }
+  &__input{
+    margin: 10px 0;
     width: 100%;
-    //position: fixed;
+    height: 20px;
+
+    &--year{
+      width: 40%;
+    }
+  }
+
+  &--background{
+    position: fixed;
     top: 0;
-    z-index: 100;
-
-    &--scroll{
-      width: 100%;
-      position: fixed;
-      top: -142px;
-      z-index: 100;
-
-    }
-  }
-  &__contacts{
-    //  @include flexbox(flex,row,stretch,space-evenly,nowrap);
-      background-color: #333333;
-      font-size: 12px;
-      font-weight: 300;
-      height: 50px;
-      width: 100%;
-
-      &--item{
-        display: block;
-        color: #fff;
-        letter-spacing: 0.5px;
-        //border: 1px solid #fff;
-        position: relative;
-        padding: 10px 35px 10px 45px;
-        transition: $animation-time;
-
-        &:hover{
-        transition: $animation-time;
-        color: #008e70;
-        }
-
-      }
-      &--phones{
-        //position: relative;
-        color: inherit;
-        text-decoration: none;
-
-        &::before{
-          position: absolute;
-          content: url(../img/svg/phone.svg);
-          top: 8px;
-          left: 12px;
-
-        }
-      }
-      &--callback{
-        //position: relative;
-        color: inherit;
-        text-decoration: none;
-
-        &::before{
-          position: absolute;
-          content: url(../img/svg/callback.svg);
-          top: 8px;
-          left: 12px;
-
-      }
-    }
-      &--address{
-        //position: relative;
-        color: inherit;
-        text-decoration: none;
-
-        &::before{
-          position: absolute;
-          content: url(../img/svg/location.svg);
-          top: 8px;
-          left: 12px;
-      }
-    }
-      &--recc-btn{
-        position: relative;
-        cursor: pointer;
-        width: 231px;
-        height: 100%;
-        background-color: #4caf50;
-        align-self: flex-end;
-        transition: $animation-time;
-        overflow: hidden;
-
-        @include flexbox(flex,row,center,center,nowrap);
-
-
-      }
-      &--recc-a{
-        position: absolute;
-        color: #fff;
-        text-decoration: none;
-        top: 33%;
-        transition: $animation-time;
-
-        &::before{
-          position: absolute;
-          content: url(../img/svg/appointment-register.svg);
-          top: -2px;
-          left: -27px;
-
-      }
-    }
-
-    &--recc-active{
-      position: absolute;
-      color: #fff;
-      text-decoration: none;
-      top: -105%;
-      transition: $animation-time;
-
-      &::before{
-        position: absolute;
-        content: url(../img/svg/appointment-register-active.svg);
-        top: -2px;
-        left: -27px;
-
-    }
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 19;
   }
 
-
-  }
-
-  &__wrapper{
-    //border: 1px solid #fff;
-    @include flexbox(flex,row,center,space-between,nowrap);
-    width: 1056px;
-    height: 50px;
-    margin: 0 auto;
-  }
-
-}
-.header__contacts--recc-btn:hover{
-  transition: $animation-time;
-  background-color: #8cc63f;
-}
-.header__contacts--recc-btn:hover .header__contacts--recc-a{
-    top: 105%;
-    transition: $animation-time;
-}
-.header__contacts--recc-btn:hover .header__contacts--recc-active{
-    top: 33%;
-    transition: $animation-time;
 }

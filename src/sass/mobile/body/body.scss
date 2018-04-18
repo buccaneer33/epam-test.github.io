@@ -5,13 +5,11 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  width: 100%;
-  //max-width: 1920px;
-  //min-width: 1147px;
-//  min-height: 100vh;
-  //margin: 0 auto;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   overflow: auto;
-  //min-height: 300px;
+  margin: 0;
+  padding: 5px;
   font-family: 'PT_Sans-Web-Regular',  sans-serif;
 
 
@@ -19,11 +17,9 @@
           @include flexbox(flex,row,center,center,wrap);
           }
 }
-.wrapper{/*
-  max-width: 990px;
-  width: 70%;
-  height: 40%;*/
-  margin: 0 auto;
+.wrapper{
+  width: calc(100% - 10px);
+  max-height: calc(100% - 10px);
   background-color: #eee;
   @include flexbox(flex,row,center,center,wrap);
 
@@ -36,4 +32,6 @@
 }
 .p--warning{
   color:red;
+  margin: 1px;
+  font-size: 14px;
 }
