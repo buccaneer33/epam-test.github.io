@@ -1,5 +1,7 @@
 .booklist{
-  width: calc(100% - 10px);
+  width: calc(100% - 30px);
+  min-width: 290px;
+  padding: 10px;
   background-color: #eee;
 
   &__title{
