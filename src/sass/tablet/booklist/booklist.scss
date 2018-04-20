@@ -20,6 +20,7 @@
       width: 10%;
       border-bottom: 1px solid #eee;
       padding: 10px;
+      word-break: break-all;
     }
     &--description{
       width: 80%;
@@ -45,20 +46,25 @@
   &-name{
     font-size: 14px;
     margin: 5px 0;
+    word-break: break-all;
 
   }
   &-autor{
     font-size: 14px;
+    word-break: break-all;
   }
   &-year{
     font-size: 14px;
+    word-break: break-all;
   }
 }
 .add-book{
   @extend .booklist;
   width: 90%;
   z-index: 100;
-  position: absolute;
+    position: absolute;
+  top: 5%;
+  //transform: translate(0%, -50%);
   &__title{
     @extend .booklist__title;
   }
@@ -86,11 +92,13 @@
 .open-photo{
   background-color: #fff;
   z-index: 100;
-  position: absolute;
+  position: fixed;
   padding: 10px;
+  top: 50%;
+  transform: translate(0%, -50%);
 
   &__photo{
-    width: 500px;
+    height: 95vmin;
   }
 
 }

@@ -15,10 +15,10 @@ window.onload = function () {
 			if(Inputs[i].type == 'text'){Inputs[i].value = '';}
 			};
 	};
-
+	
 	var clearPhotoForm = function(){
 		var newImg = document.getElementById('open-photo').lastChild;
-		newImg.remove();
+		newImg.remove();	
 	};
   var openForm = function() {
 		document.getElementById('black--background').classList.remove("visible--disable");
@@ -35,10 +35,10 @@ var openPicture = function(){
 var closePicture = function(){
 		document.getElementById('black--background').classList.add("visible--disable");
 		document.getElementById('open-photo').classList.add("visible--disable");
-
+		
 }
-
-
+	
+	
   var data = {};
   var checkInputs = function(){
 		var bookName = document.getElementById('bookName');
@@ -138,7 +138,7 @@ var closePicture = function(){
 			var elementToEdit = tBody.children[nam];
 			var newTr = document.createElement('tr');
 			newTr.classList.add("booklist__item");
-			newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
+			newTr.innerHTML = '<td class="booklist__item--photo"><img photo-action="openPhoto" src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
 		if(data.bookNam){
 				tBody.replaceChild(newTr, elementToEdit);
 				putIdButton();
@@ -211,7 +211,7 @@ function Menu(elem) {
     elem.onclick = function(e) {
       var target = e.target;
       var action = target.getAttribute('data-action');
-	  var photoAction = target.getAttribute('photo-action');
+	  var photoAction = target.getAttribute('photo-action'); 
 	  var butId = target.parentNode.id;
 	  var imageSrc = target.src;
 
@@ -246,7 +246,12 @@ function Menu(elem) {
   	clearPhotoForm();
   	closePicture();
 	};
-
+	document.getElementById('black--background').onclick = function() {
+  	clearPhotoForm();
+	closeForm();
+  	closePicture();
+	};
+	
 document.getElementById('bookName').onkeyup = function(event){
 event = event || window.event;
 if ((event.keyCode == 0xA)||(event.keyCode == 0xD))
