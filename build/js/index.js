@@ -15,14 +15,30 @@ window.onload = function () {
 			if(Inputs[i].type == 'text'){Inputs[i].value = '';}
 			};
 	};
+
+	var clearPhotoForm = function(){
+		var newImg = document.getElementById('open-photo').lastChild;
+		newImg.remove();
+	};
   var openForm = function() {
-		document.getElementById('add-book--background').classList.remove("visible--disable");
+		document.getElementById('black--background').classList.remove("visible--disable");
 		document.getElementById('add-book').classList.remove("visible--disable");
     };
   var closeForm = function() {
-		document.getElementById('add-book--background').classList.add("visible--disable");
+		document.getElementById('black--background').classList.add("visible--disable");
 		document.getElementById('add-book').classList.add("visible--disable");
     };
+var openPicture = function(){
+		document.getElementById('black--background').classList.remove("visible--disable");
+		document.getElementById('open-photo').classList.remove("visible--disable");
+}
+var closePicture = function(){
+		document.getElementById('black--background').classList.add("visible--disable");
+		document.getElementById('open-photo').classList.add("visible--disable");
+
+}
+
+
   var data = {};
   var checkInputs = function(){
 		var bookName = document.getElementById('bookName');
@@ -177,18 +193,34 @@ window.onload = function () {
 		buttons[i].id = [i];
 		}
 	};
+	var openPhotoForm = function(imageSrc){
+		var photoForm = document.getElementById('open-photo');
+		var newImg = document.createElement('img');
+		newImg.src=imageSrc;
+		newImg.classList.add('open-photo__photo');
+		photoForm.appendChild(newImg);
+		openPicture();
+	}
+
 
 function Menu(elem) {
     this.delete = function(butId) {deleteItem(butId);};
     this.edit = function(butId) {takeEditData(butId);};
+	this.openPhoto = function(imageSrc) {openPhotoForm(imageSrc);};
     var self = this;
     elem.onclick = function(e) {
       var target = e.target;
       var action = target.getAttribute('data-action');
-	    var butId = target.parentNode.id;
+	  var photoAction = target.getAttribute('photo-action');
+	  var butId = target.parentNode.id;
+	  var imageSrc = target.src;
+
       if (action) {
         self[action](butId);
       }
+	  if (photoAction){
+		self[photoAction](imageSrc);
+	  }
     };
   }
 
@@ -209,7 +241,12 @@ function Menu(elem) {
 	document.getElementById('button--save').onclick = function() {
   	checkInputs();
   	putIdButton();
-	}
+	};
+	document.getElementById('close-photo').onclick = function() {
+  	clearPhotoForm();
+  	closePicture();
+	};
+
 document.getElementById('bookName').onkeyup = function(event){
 event = event || window.event;
 if ((event.keyCode == 0xA)||(event.keyCode == 0xD))

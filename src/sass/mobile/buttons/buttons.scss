@@ -121,6 +121,29 @@
   }
 
   }
+  &--close-photo{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 8px;
+    padding: 0;
+    top: 9px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::before{
+      font-family: 'FontAwesome';
+      content: "\f00d";
+      color: #f00;
+      //position: absolute;
+      font-weight: bold;
+      font-size: 21px;
+      width: 20px;
+      height: 20px;
+
+    }
+  }
 
 }
 .button--edit-book:hover:before{
