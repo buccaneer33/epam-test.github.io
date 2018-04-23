@@ -62,31 +62,42 @@
 }
 .add-book{
   @extend .booklist;
-  width: 90%;
+  width: 90vw;
+  //height: 90vh;
   z-index: 100;
-  //position: fixed;
-  position: absolute;
-  top: 5%;
+  position: fixed;
+  //position: absolute;
+  //top: 5%;
+  top: 1vh;
   //transform: translate(0%, -43%);
+  overflow: scroll;
 
   &__title{
     @extend .booklist__title;
+    //margin: 0.5vh 10px;
+    font-size: 0vh;
   }
   &__button{
 
   }
   &__form{
     @extend .booklist__table;
-    padding: 10px;
+    padding: 0.5vh 8px;
+    margin-top: 1vh;
+    & p{
+      padding: 1vh 3px;
+      margin: 2vh 0;
+    }
   }
   &__label{
     font-size: 14px;
     color: #333;
   }
   &__input{
-    margin: 10px 0;
-    width: 100%;
-    height: 20px;
+    padding: 1vh 6px;
+    width: 87%;
+    height: 3vh;
+    margin: 0vh 5%;
 
     &--year{
       width: 40%;
@@ -102,7 +113,8 @@
   transform: translate(0%, -50%);
 
   &__photo{
-    height: 95vmin;
+    max-height: 93vmin;
+    max-width: 93vmin;
   }
 
 }

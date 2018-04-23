@@ -15,10 +15,10 @@ window.onload = function () {
 			if(Inputs[i].type == 'text'){Inputs[i].value = '';}
 			};
 	};
-	
+
 	var clearPhotoForm = function(){
 		var newImg = document.getElementById('open-photo').lastChild;
-		newImg.remove();	
+		newImg.remove();
 	};
   var openForm = function() {
 		document.getElementById('black--background').classList.remove("visible--disable");
@@ -35,10 +35,10 @@ var openPicture = function(){
 var closePicture = function(){
 		document.getElementById('black--background').classList.add("visible--disable");
 		document.getElementById('open-photo').classList.add("visible--disable");
-		
+
 }
-	
-	
+
+
   var data = {};
   var checkInputs = function(){
 		var bookName = document.getElementById('bookName');
@@ -211,7 +211,7 @@ function Menu(elem) {
     elem.onclick = function(e) {
       var target = e.target;
       var action = target.getAttribute('data-action');
-	  var photoAction = target.getAttribute('photo-action'); 
+	  var photoAction = target.getAttribute('photo-action');
 	  var butId = target.parentNode.id;
 	  var imageSrc = target.src;
 
@@ -246,12 +246,7 @@ function Menu(elem) {
   	clearPhotoForm();
   	closePicture();
 	};
-	document.getElementById('black--background').onclick = function() {
-  	clearPhotoForm();
-	closeForm();
-  	closePicture();
-	};
-	
+
 document.getElementById('bookName').onkeyup = function(event){
 event = event || window.event;
 if ((event.keyCode == 0xA)||(event.keyCode == 0xD))

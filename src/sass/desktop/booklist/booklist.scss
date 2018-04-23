@@ -105,7 +105,8 @@
   transform: translate(0%, -50%);
 
   &__photo{
-    width: 500px;
+    max-height: 93vmin;
+    max-width: 93vmin;
   }
 
 

@@ -138,7 +138,7 @@ var closePicture = function(){
 			var elementToEdit = tBody.children[nam];
 			var newTr = document.createElement('tr');
 			newTr.classList.add("booklist__item");
-			newTr.innerHTML = '<td class="booklist__item--photo"><img src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
+			newTr.innerHTML = '<td class="booklist__item--photo"><img photo-action="openPhoto" src="'+data.bookPicture+'" alt="'+data.bookName+'" width="60px" height="100px"/>     </td><td class="booklist__item--description"><div class="book__description"><h6 class="book__description-name">'+data.bookName+'</h6><span class="book__description-autor">'+data.bookAutor+'</span><span class="book__description-year">'+data.bookYear+' г.</span></div></td><td class="booklist__item--button-block"><div class="booklist__item--buttons"><button data-action="edit" class="booklist__button button--edit-book">Редактировать</button><button data-action="delete" class="booklist__button button--del-book">Удалить</button></div></td>';
 		if(data.bookNam){
 				tBody.replaceChild(newTr, elementToEdit);
 				putIdButton();

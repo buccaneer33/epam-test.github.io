@@ -6,7 +6,7 @@
   background-attachment: fixed;
   background-size: 100% 100%;
   width: calc(100vw - 10px);
-  height: calc(100% - 10px );
+  //height: calc(100% - 10px );
   min-height:  calc(100vh - 10px );
   overflow: auto;
   margin: 0;
@@ -20,6 +20,7 @@
 }
 .wrapper{
   width: calc(100% - 10px);
+  max-width: 90vw;
   //height: 100vh;
   max-height: calc(100% - 10px);
   //background-color: #eee;

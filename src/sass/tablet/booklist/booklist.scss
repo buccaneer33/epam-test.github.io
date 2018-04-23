@@ -62,8 +62,9 @@
   @extend .booklist;
   width: 90%;
   z-index: 100;
-    position: absolute;
-  top: 5%;
+  //position: absolute;
+  position: fixed;
+  top: 2%;
   //transform: translate(0%, -50%);
   &__title{
     @extend .booklist__title;
@@ -98,7 +99,8 @@
   transform: translate(0%, -50%);
 
   &__photo{
-    height: 95vmin;
+    max-height: 93vmin;
+    max-width: 93vmin;
   }
 
 }
